@@ -1,0 +1,158 @@
+.login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.topBar {
+  height: 56px;
+  background: linear-gradient(180deg, #2a4db0 0%, #3b5fc2 100%);
+  border-bottom: 2px solid #ffa500;
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  background: linear-gradient(180deg, #4a6fd4 0%, #5a7fe0 40%, #4060c8 100%);
+  display: flex;
+  align-items: stretch;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+}
+
+.tagline {
+  color: #fff;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 24px 0;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 40px;
+  gap: 16px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.user:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: #8b4513;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.userName {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.userSub {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+/* Bottom */
+.bottomBar {
+  height: 52px;
+  background: linear-gradient(180deg, #1a3098 0%, #1428a0 100%);
+  border-top: 2px solid #ffa500;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.turnOff {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.turnOffIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e06020, #c03000);
+  border: 2px solid #ff8040;
+  display: inline-block;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-align: right;
+  line-height: 1.5;
+}

@@ -1,0 +1,297 @@
+.desktop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-image: url('./blissxp.webp');
+  background-size: cover;
+  cursor: default;
+  font-family: "MS Shell Dlg 2", Tahoma, Arial, sans-serif;
+}
+
+/* ── ICONS ── */
+.icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  z-index: 10;
+  width: 72px;
+}
+
+.icon:hover {
+  background: rgba(49, 106, 197, 0.3);
+}
+
+.selected {
+  background: rgba(49, 106, 197, 0.5) !important;
+  outline: 1px dotted rgba(255, 255, 255, 0.8);
+}
+
+.iconImg {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLabel {
+  color: #fff;
+  font-size: 11px;
+  font-family: Tahoma, Arial, sans-serif;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  text-shadow: 1px 1px 2px #000, 0 0 6px #000;
+}
+
+/* ── TASKBAR ── */
+.taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, #245edc 0%, #3a6ee0 3%, #1848c8 8%, #1040b0 50%, #0c38a8 51%, #1848c8 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 4px;
+  z-index: 500;
+  border-top: 1px solid #6090e0;
+}
+
+.startBtn {
+  height: 32px;
+  padding: 0 10px 0 6px;
+  background: linear-gradient(180deg, #5cb85c 0%, #3a9a3a 40%, #2e8a2e 60%, #4aaa4a 100%);
+  border: 1px solid #1a6a1a;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.startBtn:hover, .startActive {
+  background: linear-gradient(180deg, #70cc70, #4aaa4a 40%, #3a9a3a 60%, #5abf5a 100%);
+}
+
+.flag {
+  width: 18px;
+  height: 18px;
+}
+
+.flag span {
+  border-radius: 1px;
+}
+
+.tbTasks {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.tbTask {
+  height: 28px;
+  padding: 0 8px;
+  min-width: 90px;
+  max-width: 150px;
+  background: linear-gradient(180deg, #2a5ab8, #1848a8 50%, #2050b0);
+  border: 1px solid #1040a0;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tbTask:hover {
+  background: linear-gradient(180deg, #4070d0, #2858b8 50%, #3060c0);
+}
+
+.tbActive {
+  background: linear-gradient(180deg, #1838a0, #2050b8 50%, #1840a8) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.tbLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tray {
+  margin-left: auto;
+  height: 100%;
+  background: linear-gradient(180deg, #1a4ab0, #1040a8 50%, #1848b0);
+  border-left: 1px solid #3060c0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.trayIcon {
+  font-size: 16px;
+}
+
+.clock {
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+  min-width: 38px;
+  white-space: pre;
+}
+
+/* ── START MENU ── */
+.startMenu {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 340px;
+  background: #ece9d8;
+  border: 1px solid #003090;
+  border-radius: 6px 6px 0 0;
+  z-index: 600;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: smSlide 0.12s ease;
+}
+
+@keyframes smSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.smHeader {
+  height: 54px;
+  background: linear-gradient(90deg, #1a4adc, #3a6ae0);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+}
+
+.smAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.smName {
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.smBody {
+  display: flex;
+  height: 220px;
+}
+
+.smLeft {
+  flex: 1;
+  background: #fff;
+  padding: 4px 0;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.smRight {
+  flex: 1;
+  background: #ece9d8;
+  padding: 4px 0;
+  overflow-y: auto;
+}
+
+.smItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.smItem:hover {
+  background: #316ac5;
+  color: #fff;
+}
+
+.smItemIcon {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.smSep {
+  height: 1px;
+  background: #ccc;
+  margin: 4px 8px;
+}
+
+.smFooter {
+  height: 34px;
+  background: linear-gradient(90deg, #1a4adc, #3a6ae0);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.smFootBtn {
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.smFootBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

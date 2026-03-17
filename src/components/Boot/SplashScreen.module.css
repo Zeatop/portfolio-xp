@@ -1,0 +1,118 @@
+.splash {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  position: relative;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.flag {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 12px rgba(80, 160, 255, 0.3));
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.microsoft {
+  color: #bbbbbb;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.winLine {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  position: relative;
+}
+
+.windows {
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(100, 160, 255, 0.4);
+}
+
+.xp {
+  color: #e8621a;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.tm {
+  color: #888;
+  font-size: 11px;
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+/* Progress bar */
+.barWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.barOuter {
+  width: 200px;
+  height: 18px;
+  border: 1px solid #555;
+  border-radius: 9px;
+  background: #0a0a0a;
+  overflow: hidden;
+  padding: 0;
+}
+
+.canvas {
+  display: block;
+  border-radius: 8px;
+}
+
+/* Bottom credits */
+.copyLeft {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  color: #888;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+}
+
+.copyRight {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
