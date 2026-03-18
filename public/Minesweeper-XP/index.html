@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="XP">
-  <style>
-  /* Masquer la titlebar Wails — on utilise notre propre fenêtre XP */
-  .window {
-    display: contents !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-  }
-  .title-bar {
-    display: none !important;
-  }
-  .window-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 100vh !important;
-    overflow: hidden;
-  }
-
-  /* Le jeu prend toute la hauteur */
-  body, #root {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background: rgb(192, 192, 192);
-  }
-</style>
 <head>
-    <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no" name="viewport"/>
-    <title>Minesweeper XP</title>
-    <!-- Patch: neutralise les appels Wails qui n'existent pas en navigateur -->
-    <script>
-      window.runtime = {
-        Quit: function() {},
-        WindowMinimise: function() {},
-        WindowSetSize: function() {},
-        BrowserOpenURL: function(url) { window.open(url, '_blank') }
+  <meta charset="UTF-8"/>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no" name="viewport"/>
+  <title>Minesweeper XP</title>
+
+  <style>
+    /* Masquer la titlebar Wails — on utilise notre propre fenêtre XP */
+    .window {
+      display: contents !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+    .title-bar {
+      display: none !important;
+    }
+    .window-body {
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100vh !important;
+      overflow: hidden;
+    }
+    /* Le jeu prend toute la hauteur */
+    body, #root {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: rgb(192, 192, 192);
+    }
+  </style>
+
+  <script>
+    window.runtime = {
+      Quit: function() {},
+      WindowMinimise: function() {},
+      BrowserOpenURL: function(url) { window.open(url, '_blank') },
+      WindowSetSize: function(w, h) {
+        const adjustedW = w - 6
+        const adjustedH = h - 40
+        window.parent.postMessage({
+          type: 'minesweeper-resize',
+          width: adjustedW,
+          height: adjustedH
+        }, '*')
       }
-    </script>
+    }
+  </script>
+
   <script type="module" crossorigin src="/Minesweeper-XP/assets/index.598ae11f.js"></script>
   <link rel="stylesheet" href="/Minesweeper-XP/assets/index.e1336d0d.css">
 </head>
 <body>
-<div id="root"></div>
+  <div id="root"></div>
 </body>
 </html>
-<script>
-  window.runtime = {
-    Quit: function() {},
-    WindowMinimise: function() {},
-    BrowserOpenURL: function(url) { window.open(url, '_blank') },
-    WindowSetSize: function(w, h) {
-      const adjustedW = w - 6
-      const adjustedH = h - 40
-      window.parent.postMessage({
-        type: 'minesweeper-resize',
-        width: adjustedW,
-        height: adjustedH
-      }, '*')
-    },
-  }
-</script>
