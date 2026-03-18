@@ -32,7 +32,10 @@ export default function XpWindow({ id }) {
       <div className={styles.window}>
       {/* Title bar */}
       <div className={styles.titleBar}>
-        <span className={styles.titleIcon}>{meta.icon}</span>
+        {meta.img
+          ? <img src={meta.img} alt={meta.title} className={styles.titleIcon} />
+          : <span className={styles.titleIcon}>{meta.icon}</span>
+        }
         <span className={styles.titleText}>{meta.title}</span>
         <div className={styles.buttons}>
           <button className={`${styles.btn} ${styles.min}`} onClick={() => toggleMinimize(id)}>_</button>
@@ -42,7 +45,7 @@ export default function XpWindow({ id }) {
       </div>
 
       {/* Body */}
-      <div className={styles.body}>
+      <div className={styles.body} style={id === 'minesweeper' ? { padding: 0, overflow: 'hidden' } : {}}>
         <WindowContent id={id} />
       </div>
       </div>

@@ -10,6 +10,7 @@ export default function WindowContent({ id }) {
     case 'github':  return <GithubContent />
     case 'linkedin':return <LinkedinContent />
     case 'recycle': return <RecycleContent />
+    case 'minesweeper': return <MinesweeperContent />
     default:        return <p>Contenu à venir...</p>
   }
 }
@@ -170,5 +171,14 @@ function RecycleContent() {
       <p style={{ fontSize: 40 }}>🗑️</p>
       <p style={{ marginTop: 10, color: '#666' }}>La corbeille est vide.</p>
     </div>
+  )
+}
+
+function MinesweeperContent() {
+  return (
+    <iframe
+      src="/minesweeper/index.html"
+      style={{ width: '100%', height: '100%', border: 'none' }}
+    />
   )
 }

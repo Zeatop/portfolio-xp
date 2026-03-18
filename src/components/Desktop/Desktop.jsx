@@ -46,7 +46,10 @@ export default function Desktop() {
           onClick={(e) => { e.stopPropagation(); setSelectedIcon(icon.id) }}
           onDoubleClick={(e) => { e.stopPropagation(); openWindow(icon.id) }}
         >
-          <span className={styles.iconImg}>{icon.icon}</span>
+          {icon.img 
+          ? <img src={icon.img} alt={icon.label} className={styles.iconImg} />
+          : <span className={styles.iconImg}>{icon.icon}</span>
+          }
           <span className={styles.iconLabel}>{icon.label}</span>
         </div>
       ))}
@@ -114,7 +117,10 @@ export default function Desktop() {
                 className={`${styles.tbTask} ${!windows[id]?.minimized ? styles.tbActive : ''}`}
                 onClick={() => toggleMinimize(id)}
               >
-                <span>{meta.icon}</span>
+                {meta.img
+                  ? <img src={meta.img} alt={meta.title} className={styles.tbIcon} />
+                  : <span>{meta.icon}</span>
+                }
                 <span className={styles.tbLabel}>{meta.title}</span>
               </button>
             )

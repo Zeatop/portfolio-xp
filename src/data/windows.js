@@ -4,6 +4,7 @@ export const WINDOWS = {
     id: 'about',
     title: 'À propos de moi',
     icon: '🧑‍💻',
+    img: "/winxp_icons/User 1.ico",
     defaultSize: { width: 420, height: 300 },
   },
   probtp: {
@@ -48,11 +49,19 @@ export const WINDOWS = {
     icon: '🗑️',
     defaultSize: { width: 300, height: 160 },
   },
+  // Dans WINDOWS
+  minesweeper: {
+  id: 'minesweeper',
+  title: 'Minesweeper',
+  icon: '💣',
+  img: "/winxp_icons/Minesweeper.ico",
+  defaultSize: { width: 200, height: 280 },
+  },
 }
 
 // Desktop icon layout
 export const DESKTOP_ICONS = [
-  { id: 'about',   icon: '🧑‍💻', label: 'About me',        col: 0, row: 0 },
+  { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me',        col: 0, row: 0 },
   { id: 'probtp',  icon: '🏢',  label: 'Projets PRO BTP', col: 0, row: 1 },
   { id: 'perso',   icon: '🎮',  label: 'Projets perso',   col: 0, row: 2 },
   { id: 'musique', icon: '🎵',  label: 'Mes musiques',    col: 0, row: 3 },
@@ -60,6 +69,7 @@ export const DESKTOP_ICONS = [
   { id: 'github',  icon: '🐙',  label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  label: 'LinkedIn',        col: 1, row: 1 },
   { id: 'recycle', icon: '🗑️',  label: 'Corbeille',       col: 1, row: 2 },
+  { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Minesweeper', col: 1, row: 3 },
 ]
 
 // Start menu items
