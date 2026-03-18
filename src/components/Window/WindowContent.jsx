@@ -11,6 +11,7 @@ export default function WindowContent({ id }) {
     case 'linkedin':return <LinkedinContent />
     case 'recycle': return <RecycleContent />
     case 'minesweeper': return <MinesweeperContent />
+    case 'pinball': return <PinballContent />
     default:        return <p>Contenu à venir...</p>
   }
 }
@@ -178,7 +179,18 @@ function MinesweeperContent() {
   return (
     <iframe
       src="/Minesweeper-XP/index.html"
+      style={{ width: '100%', height: '100%', border: 'none' , padding: 0, overflow: 'hidden'}}
+    />
+  )
+}
+
+function PinballContent() {
+  return (
+    <iframe
+      src="/Pinball/index.html"
       style={{ width: '100%', height: '100%', border: 'none' }}
+      onMouseEnter={(e) => e.target.focus()}
+      onClick={(e) => e.target.focus()}
     />
   )
 }

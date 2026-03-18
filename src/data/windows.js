@@ -57,11 +57,18 @@ export const WINDOWS = {
     defaultSize: { width: 300, height: 160 },
   },
   minesweeper: {
-    id: 'minesweeper',
+    id: 'Démineur',
     title: 'Minesweeper',
     icon: '💣',
     img: "/winxp_icons/Minesweeper.ico",
     defaultSize: { width: 220, height: 320 },
+  },
+  pinball: {
+    id: 'pinball',
+    title: 'Pinball',
+    icon: '🕹️',
+    img: "/winxp_icons/3d_space_cadet.png",
+    defaultSize: { width: 953, height: 673 },
   },
 }
 
@@ -75,7 +82,8 @@ export const DESKTOP_ICONS = [
   { id: 'github',  icon: '🐙',  img: '/winxp_icons/Earth (fixed).ico', label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn',        col: 1, row: 1 },
   { id: 'recycle', icon: '🗑️',  img: '/winxp_icons/Folder Closed (Alt).ico', label: 'Corbeille',       col: 1, row: 2 },
-  { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Minesweeper', col: 1, row: 3 },
+  { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Démineur', col: 1, row: 3 },
+  { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball', col: 1, row: 4 },
 ]
 
 // Start menu items
@@ -89,4 +97,5 @@ export const START_MENU_LEFT = [
 export const START_MENU_RIGHT = [
   { id: 'github',  icon: '🐙',  label: 'GitHub' },
   { id: 'linkedin',icon: '💼',  label: 'LinkedIn' },
+  { id: 'pinball', icon: '🕹️', label: 'Pinball' },
 ]

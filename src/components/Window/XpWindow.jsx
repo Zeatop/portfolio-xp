@@ -69,7 +69,13 @@ export default function XpWindow({ id }) {
             <button className={`${styles.btn} ${styles.cls}`} onClick={() => closeWindow(id)}>✕</button>
           </div>
         </div>
-        <div className={styles.body} style={id === 'minesweeper' ? { padding: 0, overflow: 'hidden' } : {}}>
+        <div className={styles.body} style={
+          id === 'minesweeper' || id === 'pinball' 
+          ? { padding: 0, overflow: 'hidden' } 
+          : {}
+          }
+          onMouseDown={id === 'pinball' ? (e) => e.stopPropagation() : undefined}
+          >
           <WindowContent id={id} />
         </div>
       </div>
