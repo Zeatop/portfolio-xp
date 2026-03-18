@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'winxp-tahoma';
+  src: url('/fonts/Windows Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .desktop {
   width: 100%;
   height: 100%;
@@ -8,7 +15,7 @@
   background-image: url('./blissxp.webp');
   background-size: cover;
   cursor: default;
-  font-family: "MS Shell Dlg 2", Tahoma, Arial, sans-serif;
+  font-family: "winxp-tahoma", "MS Shell Dlg 2", Tahoma, Arial, sans-serif;
 }
 
 /* ── ICONS ── */
@@ -36,8 +43,8 @@
 
 .iconImg {
   font-size: 30px;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,8 +52,8 @@
 
 .iconLabel {
   color: #fff;
-  font-size: 11px;
-  font-family: Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-family: "winxp-tahoma";
   text-align: center;
   line-height: 1.2;
   word-break: break-word;
@@ -59,29 +66,29 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 48px;
   background: linear-gradient(180deg, #245edc 0%, #3a6ee0 3%, #1848c8 8%, #1040b0 50%, #0c38a8 51%, #1848c8 100%);
   display: flex;
   align-items: center;
-  padding: 0 4px;
-  gap: 4px;
+  padding: 0 5px;
+  gap: 5px;
   z-index: 500;
   border-top: 1px solid #6090e0;
 }
 
 .startBtn {
-  height: 32px;
-  padding: 0 10px 0 6px;
+  height: 38px;
+  padding: 0 12px 0 8px;
   background: linear-gradient(180deg, #5cb85c 0%, #3a9a3a 40%, #2e8a2e 60%, #4aaa4a 100%);
   border: 1px solid #1a6a1a;
-  border-radius: 14px;
+  border-radius: 17px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   cursor: pointer;
   color: #fff;
-  font-family: Tahoma, Arial, sans-serif;
-  font-size: 14px;
+  font-family: "winxp-tahoma";
+  font-size: 17px;
   font-weight: bold;
   font-style: italic;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -94,8 +101,8 @@
 }
 
 .flag {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
 
 .flag span {
@@ -104,27 +111,27 @@
 
 .tbTasks {
   display: flex;
-  gap: 3px;
+  gap: 4px;
   flex: 1;
   overflow: hidden;
   min-width: 0;
 }
 
 .tbTask {
-  height: 28px;
-  padding: 0 8px;
-  min-width: 90px;
-  max-width: 150px;
+  height: 34px;
+  padding: 0 10px;
+  min-width: 108px;
+  max-width: 180px;
   background: linear-gradient(180deg, #2a5ab8, #1848a8 50%, #2050b0);
   border: 1px solid #1040a0;
   border-radius: 3px;
   color: #fff;
-  font-family: Tahoma, Arial, sans-serif;
-  font-size: 11px;
+  font-family: "winxp-tahoma";
+  font-size: 13px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   overflow: hidden;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -151,29 +158,29 @@
   border-left: 1px solid #3060c0;
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  gap: 8px;
+  padding: 0 12px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
 .trayIcon {
-  font-size: 16px;
+  font-size: 19px;
 }
 
 .clock {
   color: #fff;
-  font-family: Tahoma, Arial, sans-serif;
-  font-size: 11px;
+  font-family: "winxp-tahoma";
+  font-size: 13px;
   text-align: center;
   line-height: 1.3;
-  min-width: 38px;
+  min-width: 44px;
   white-space: pre;
 }
 
 /* ── START MENU ── */
 .startMenu {
   position: absolute;
-  bottom: 40px;
+  bottom: 48px;
   left: 0;
   width: 340px;
   background: #ece9d8;
@@ -213,7 +220,7 @@
 
 .smName {
   color: #fff;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "winxp-tahoma", Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -245,7 +252,7 @@
   gap: 8px;
   padding: 6px 10px;
   cursor: pointer;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "winxp-tahoma";
   font-size: 12px;
   color: #000;
   background: transparent;
@@ -283,7 +290,7 @@
 
 .smFootBtn {
   color: #fff;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "winxp-tahoma";
   font-size: 12px;
   background: transparent;
   border: none;

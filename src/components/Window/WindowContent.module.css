@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'winxp-tahoma';
+  src: url('/fonts/Windows Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 .sectionTitle {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   color: #003090;
   margin-bottom: 10px;
@@ -8,10 +17,11 @@
 }
 
 .para {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 8px;
   color: #111;
+  font-family: "winxp-tahoma";
 }
 
 .project {
@@ -24,13 +34,13 @@
 
 .projectTitle {
   color: #003090;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 .projectBody {
-  font-size: 11px;
+  font-size: 14px;
   color: #333;
   line-height: 1.5;
 }
@@ -49,12 +59,12 @@
   border: 1px solid #99bbdd;
   border-radius: 2px;
   padding: 1px 7px;
-  font-size: 10px;
-  font-family: Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-family: "winxp-tahoma";
 }
 
 .hint {
-  font-size: 11px;
+  font-size: 12px;
   color: #666;
   font-style: italic;
   margin-top: 10px;

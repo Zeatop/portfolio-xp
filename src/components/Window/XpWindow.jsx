@@ -27,8 +27,9 @@ export default function XpWindow({ id }) {
       style={{ zIndex: win.zIndex, position: 'absolute' }}
       dragHandleClassName={styles.titleBar}
       onMouseDown={() => focusWindow(id)}
-      className={styles.window}
     >
+      {/* Wrapper interne qui remplit le conteneur Rnd */}
+      <div className={styles.window}>
       {/* Title bar */}
       <div className={styles.titleBar}>
         <span className={styles.titleIcon}>{meta.icon}</span>
@@ -43,6 +44,7 @@ export default function XpWindow({ id }) {
       {/* Body */}
       <div className={styles.body}>
         <WindowContent id={id} />
+      </div>
       </div>
     </Rnd>
   )
