@@ -6,30 +6,10 @@
   <title>Minesweeper XP</title>
 
   <style>
-    /* Masquer la titlebar Wails — on utilise notre propre fenêtre XP */
-    .window {
-      display: contents !important;
-      border: none !important;
-      box-shadow: none !important;
-      border-radius: 0 !important;
-    }
-    .title-bar {
-      display: none !important;
-    }
-    .window-body {
-      margin: 0 !important;
-      padding: 0 !important;
-      height: 100vh !important;
-      overflow: hidden;
-    }
-    /* Le jeu prend toute la hauteur */
-    body, #root {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: rgb(192, 192, 192);
-    }
+    .window { display: contents !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; }
+    .title-bar { display: none !important; }
+    .window-body { margin: 0 !important; padding: 0 !important; overflow: hidden; }
+    body, #root { margin: 0; padding: 0; height: 100%; overflow: hidden; background: rgb(192, 192, 192); }
   </style>
 
   <script>
@@ -37,16 +17,30 @@
       Quit: function() {},
       WindowMinimise: function() {},
       BrowserOpenURL: function(url) { window.open(url, '_blank') },
-      WindowSetSize: function(w, h) {
-        const adjustedW = w - 6
-        const adjustedH = h - 40
-        window.parent.postMessage({
-          type: 'minesweeper-resize',
-          width: adjustedW,
-          height: adjustedH
-        }, '*')
-      }
+      WindowSetSize: function() {}
     }
+
+    window.addEventListener('load', function() {
+      var attempts = 0
+      var interval = setInterval(function() {
+        attempts++
+        var content = document.querySelector('.mine__content')
+        var topBar  = document.querySelector('.mine__top-bar')
+        if (content && topBar) {
+          clearInterval(interval)
+          function sendSize() {
+            var w = content.offsetWidth
+            var h = content.offsetHeight + topBar.offsetHeight
+            window.parent.postMessage({ type: 'minesweeper-resize', width: w, height: h }, '*')
+          }
+          sendSize()
+          var observer = new ResizeObserver(sendSize)
+          observer.observe(content)
+          observer.observe(topBar)
+        }
+        if (attempts > 50) clearInterval(interval)
+      }, 100)
+    })
   </script>
 
   <script type="module" crossorigin src="/Minesweeper-XP/assets/index.598ae11f.js"></script>

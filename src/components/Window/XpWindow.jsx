@@ -5,7 +5,7 @@ import WindowContent from './WindowContent'
 import styles from './XpWindow.module.css'
 import { useRef, useEffect, useState } from 'react'
 
-const TITLEBAR_H = 28  // hauteur de la titlebar XP en px
+const TITLEBAR_H = 28
 
 export default function XpWindow({ id }) {
   const win = useOsStore((s) => s.windows[id])
@@ -15,6 +15,7 @@ export default function XpWindow({ id }) {
   const meta = WINDOWS[id]
   const rndRef = useRef(null)
   const [dynSize, setDynSize] = useState(null)
+  const [ready, setReady] = useState(id !== 'minesweeper') // autres fenêtres toujours visibles
 
   useEffect(() => {
     if (id !== 'minesweeper') return
@@ -24,6 +25,7 @@ export default function XpWindow({ id }) {
       const newH = e.data.height + TITLEBAR_H
       setDynSize({ width: newW, height: newH })
       rndRef.current?.updateSize({ width: newW, height: newH })
+      setReady(true) // afficher seulement quand la taille est connue
     }
     window.addEventListener('message', handler)
     return () => window.removeEventListener('message', handler)
@@ -46,7 +48,11 @@ export default function XpWindow({ id }) {
       minHeight={id === 'minesweeper' ? undefined : 160}
       disableResizing={id === 'minesweeper'}
       bounds="parent"
-      style={{ zIndex: win.zIndex, position: 'absolute' }}
+      style={{
+        zIndex: win.zIndex,
+        position: 'absolute',
+        visibility: ready ? 'visible' : 'hidden',  // invisible tant que taille inconnue
+      }}
       dragHandleClassName={styles.titleBar}
       onMouseDown={() => focusWindow(id)}
     >
