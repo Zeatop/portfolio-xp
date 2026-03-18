@@ -50,6 +50,7 @@
   flex-wrap: wrap;
   gap: 4px;
   margin-top: 6px;
+  margin-bottom: 6px
 }
 
 .tag {

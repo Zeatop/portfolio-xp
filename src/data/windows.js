@@ -25,7 +25,7 @@ export const WINDOWS = {
     id: 'musique',
     title: 'Mes musiques',
     icon: '🎵',
-    img: "/winxp_icons/Music File.ico",
+    img: "/winxp_icons/Winamp.png",
     defaultSize: { width: 400, height: 280 },
   },
   cv: {
@@ -33,7 +33,7 @@ export const WINDOWS = {
     title: 'Mon CV',
     icon: '📄',
     img: "/winxp_icons/File.ico",
-    defaultSize: { width: 420, height: 320 },
+    defaultSize: { width: 690, height: 780 },
   },
   github: {
     id: 'github',
@@ -77,7 +77,7 @@ export const DESKTOP_ICONS = [
   { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me',        col: 0, row: 0 },
   { id: 'probtp',  icon: '🏢',  img: '/winxp_icons/Manage your Server.ico', label: 'Projets PRO BTP', col: 0, row: 1 },
   { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets perso',   col: 0, row: 2 },
-  { id: 'musique', icon: '🎵',  img: '/winxp_icons/Music File.ico', label: 'Mes musiques',    col: 0, row: 3 },
+  { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Mes musiques',    col: 0, row: 3 },
   { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV',          col: 0, row: 4 },
   { id: 'github',  icon: '🐙',  img: '/winxp_icons/Earth (fixed).ico', label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn',        col: 1, row: 1 },
@@ -88,14 +88,14 @@ export const DESKTOP_ICONS = [
 
 // Start menu items
 export const START_MENU_LEFT = [
-  { id: 'about',   icon: '🧑‍💻', label: 'About me' },
-  { id: 'probtp',  icon: '🏢',  label: 'Projets PRO BTP' },
-  { id: 'perso',   icon: '🎮',  label: 'Projets perso' },
-  { id: 'musique', icon: '🎵',  label: 'Mes musiques' },
-  { id: 'cv',      icon: '📄',  label: 'Mon CV' },
+  { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me' },
+  { id: 'probtp',  icon: '🏢',  img: '/winxp_icons/Manage your Server.ico', label: 'Projets PRO BTP' },
+  { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets perso' },
+  { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Mes musiques' },
+  { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV' },
 ]
 export const START_MENU_RIGHT = [
-  { id: 'github',  icon: '🐙',  label: 'GitHub' },
-  { id: 'linkedin',icon: '💼',  label: 'LinkedIn' },
-  { id: 'pinball', icon: '🕹️', label: 'Pinball' },
+  { id: 'github',  icon: '🐙', img: '/winxp_icons/Earth (fixed).ico',  label: 'GitHub' },
+  { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn' },
+  { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball' },
 ]
