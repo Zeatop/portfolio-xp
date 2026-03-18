@@ -55,7 +55,7 @@ export const WINDOWS = {
   title: 'Minesweeper',
   icon: '💣',
   img: "/winxp_icons/Minesweeper.ico",
-  defaultSize: { width: 200, height: 280 },
+  defaultSize: { width: 220, height: 320 },
   },
 }
 

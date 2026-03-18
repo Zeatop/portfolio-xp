@@ -3,6 +3,9 @@ import { useOsStore } from '../../store/useOsStore'
 import { WINDOWS } from '../../data/windows'
 import WindowContent from './WindowContent'
 import styles from './XpWindow.module.css'
+import { useRef, useEffect, useState } from 'react'
+
+const TITLEBAR_H = 28  // hauteur de la titlebar XP en px
 
 export default function XpWindow({ id }) {
   const win = useOsStore((s) => s.windows[id])
@@ -10,44 +13,59 @@ export default function XpWindow({ id }) {
   const toggleMinimize = useOsStore((s) => s.toggleMinimize)
   const focusWindow = useOsStore((s) => s.focusWindow)
   const meta = WINDOWS[id]
+  const rndRef = useRef(null)
+  const [dynSize, setDynSize] = useState(null)
+
+  useEffect(() => {
+    if (id !== 'minesweeper') return
+    const handler = (e) => {
+      if (e.data?.type !== 'minesweeper-resize') return
+      const newW = e.data.width
+      const newH = e.data.height + TITLEBAR_H
+      setDynSize({ width: newW, height: newH })
+      rndRef.current?.updateSize({ width: newW, height: newH })
+    }
+    window.addEventListener('message', handler)
+    return () => window.removeEventListener('message', handler)
+  }, [id])
+
   if (!meta || !win) return null
   if (win.minimized) return null
 
   return (
     <Rnd
+      ref={rndRef}
       default={{
         x: 80 + Math.random() * 60,
         y: 40 + Math.random() * 40,
         width: meta.defaultSize.width,
         height: meta.defaultSize.height,
       }}
-      minWidth={260}
-      minHeight={160}
+      {...(id === 'minesweeper' && dynSize ? { size: dynSize } : {})}
+      minWidth={id === 'minesweeper' ? undefined : 260}
+      minHeight={id === 'minesweeper' ? undefined : 160}
+      disableResizing={id === 'minesweeper'}
       bounds="parent"
       style={{ zIndex: win.zIndex, position: 'absolute' }}
       dragHandleClassName={styles.titleBar}
       onMouseDown={() => focusWindow(id)}
     >
-      {/* Wrapper interne qui remplit le conteneur Rnd */}
       <div className={styles.window}>
-      {/* Title bar */}
-      <div className={styles.titleBar}>
-        {meta.img
-          ? <img src={meta.img} alt={meta.title} className={styles.titleIcon} />
-          : <span className={styles.titleIcon}>{meta.icon}</span>
-        }
-        <span className={styles.titleText}>{meta.title}</span>
-        <div className={styles.buttons}>
-          <button className={`${styles.btn} ${styles.min}`} onClick={() => toggleMinimize(id)}>_</button>
-          <button className={`${styles.btn} ${styles.max}`}>□</button>
-          <button className={`${styles.btn} ${styles.cls}`} onClick={() => closeWindow(id)}>✕</button>
+        <div className={styles.titleBar}>
+          {meta.img
+            ? <img src={meta.img} alt={meta.title} className={styles.titleIcon} />
+            : <span className={styles.titleIcon}>{meta.icon}</span>
+          }
+          <span className={styles.titleText}>{meta.title}</span>
+          <div className={styles.buttons}>
+            <button className={`${styles.btn} ${styles.min}`} onClick={() => toggleMinimize(id)}>_</button>
+            <button className={`${styles.btn} ${styles.max}`}>□</button>
+            <button className={`${styles.btn} ${styles.cls}`} onClick={() => closeWindow(id)}>✕</button>
+          </div>
         </div>
-      </div>
-
-      {/* Body */}
-      <div className={styles.body} style={id === 'minesweeper' ? { padding: 0, overflow: 'hidden' } : {}}>
-        <WindowContent id={id} />
-      </div>
+        <div className={styles.body} style={id === 'minesweeper' ? { padding: 0, overflow: 'hidden' } : {}}>
+          <WindowContent id={id} />
+        </div>
       </div>
     </Rnd>
   )

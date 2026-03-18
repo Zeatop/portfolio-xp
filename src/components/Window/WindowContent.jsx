@@ -177,7 +177,7 @@ function RecycleContent() {
 function MinesweeperContent() {
   return (
     <iframe
-      src="/minesweeper/index.html"
+      src="/Minesweeper-XP/index.html"
       style={{ width: '100%', height: '100%', border: 'none' }}
     />
   )
