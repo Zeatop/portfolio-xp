@@ -49,13 +49,6 @@ export const WINDOWS = {
     img: "/winxp_icons/User Accounts.ico",
     defaultSize: { width: 340, height: 200 },
   },
-  recycle: {
-    id: 'recycle',
-    title: 'Corbeille',
-    icon: '🗑️',
-    img: "/winxp_icons/Folder Closed (Alt).ico",
-    defaultSize: { width: 300, height: 160 },
-  },
   minesweeper: {
     id: 'Démineur',
     title: 'Minesweeper',
@@ -88,10 +81,9 @@ export const DESKTOP_ICONS = [
   { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV',          col: 0, row: 4 },
   { id: 'github',  icon: '🐙',  img: '/winxp_icons/Earth (fixed).ico', label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn',        col: 1, row: 1 },
-  { id: 'recycle', icon: '🗑️',  img: '/winxp_icons/Folder Closed (Alt).ico', label: 'Corbeille',       col: 1, row: 2 },
   { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Démineur', col: 1, row: 3 },
   { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball', col: 1, row: 4 },
-  { id: 'mail', icon: '✉️', img: '/winxp_icons/Phone.ico', label: 'Contact', col: 0, row: 5 },
+  { id: 'mail', icon: '✉️', img: '/winxp_icons/Phone.ico', label: 'Contact', col: 1, row: 2 },
 ]
 
 // Start menu items

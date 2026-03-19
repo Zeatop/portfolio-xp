@@ -174,14 +174,20 @@ function CvContent() {
           </Project>
 
           <Project title="🎓 Formations">
-            <strong>M2 MIAGE MBDS</strong> — Université Côte d'Azur | Sept 2025 – Juin 2026<br />
+            <strong>M2 MIAGE MBDS</strong> — Université Côte d'Azur<br />
+            <span style={{color:'#316ac5'}}>Sept 2025 – Juin 2026</span><br />
             Systèmes distribués · AWS · React / Spring Boot · IoT<br /><br />
-            <strong>Master 1 Concepteur Développeur</strong> — OpenClassrooms | Août 2023 – Août 2025<br />
+
+            <strong>Master 1 Concepteur Développeur</strong> — OpenClassrooms<br />
+            <span style={{color:'#316ac5'}}>Août 2023 – Août 2025</span><br />
             Python · Scripting · APIs · POO · Green code · Alternance<br /><br />
-            <strong>POE DevOps</strong> — IB Group | Nov 2022 – Fév 2023<br />
+
+            <strong>POE DevOps</strong> — IB Group<br />
+            <span style={{color:'#316ac5'}}>Nov 2022 – Fév 2023</span><br />
             Agile · Livraison continue · Automation · Conteneurs · Cloud · Linux<br /><br />
+
             <strong>MSc Biocontrol Solutions for Plant Health</strong> — Mention très bien<br />
-            Université Côte d'Azur, INRAE | Sept 2019 – Juin 2021
+            <span style={{color:'#316ac5'}}>Université Côte d'Azur, INRAE | Sept 2019 – Juin 2021</span>
           </Project>
 
           <Project title="🛠 Compétences">
@@ -220,14 +226,20 @@ function CvContent() {
           </Project>
 
           <Project title="🎓 Education">
-            <strong>M2 MIAGE MBDS</strong> — Université Côte d'Azur | Sept 2025 – June 2026<br />
+            <strong>M2 MIAGE MBDS</strong> — Université Côte d'Azur<br />
+            <span style={{color:'#316ac5'}}>Sept 2025 – June 2026</span><br />
             Distributed systems · AWS · React / Spring Boot · IoT<br /><br />
-            <strong>Master 1 — Developer / Designer</strong> — OpenClassrooms | August 2023 – August 2025<br />
+
+            <strong>Master 1 — Developer / Designer</strong> — OpenClassrooms<br />
+            <span style={{color:'#316ac5'}}>August 2023 – August 2025</span><br />
             Python · Scripting · APIs · OOP · Green code · Work-study<br /><br />
-            <strong>POE DevOps</strong> — IB Group | Nov 2022 – Feb 2023<br />
+
+            <strong>POE DevOps</strong> — IB Group<br />
+            <span style={{color:'#316ac5'}}>Nov 2022 – Feb 2023</span><br />
             Agile · Continuous delivery · Automation · Containers · Cloud · Linux<br /><br />
+
             <strong>MSc Biocontrol Solutions for Plant Health</strong> — With honours<br />
-            Université Côte d'Azur, INRAE | Sept 2019 – June 2021
+            <span style={{color:'#316ac5'}}>Université Côte d'Azur, INRAE | Sept 2019 – June 2021</span>
           </Project>
 
           <Project title="🛠 Skills">
