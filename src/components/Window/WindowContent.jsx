@@ -1,6 +1,7 @@
 import styles from './WindowContent.module.css'
 import { useState, useEffect, useRef } from 'react'
 import Webamp from 'webamp'
+import MailContent from './MailContent'
 
 export default function WindowContent({ id }) {
   switch (id) {
@@ -13,6 +14,7 @@ export default function WindowContent({ id }) {
     case 'recycle': return <RecycleContent />
     case 'minesweeper': return <MinesweeperContent />
     case 'pinball': return <PinballContent />
+    case 'mail':     return <MailContent />
     default:        return <p>Contenu à venir...</p>
   }
 }

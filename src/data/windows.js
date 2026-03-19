@@ -23,7 +23,7 @@ export const WINDOWS = {
   },
   musique: {
     id: 'musique',
-    title: 'Mes musiques',
+    title: 'Musiques',
     icon: '🎵',
     img: "/winxp_icons/Winamp.png",
     defaultSize: { width: 400, height: 280 },
@@ -70,20 +70,28 @@ export const WINDOWS = {
     img: "/winxp_icons/3d_space_cadet.png",
     defaultSize: { width: 953, height: 673 },
   },
+  mail: {
+    id: 'mail',
+    title: 'Contact',
+    icon: '✉️',
+    img: "/winxp_icons/Phone.ico",
+    defaultSize: { width: 400, height: 280 },
+  },
 }
 
 // Desktop icon layout
 export const DESKTOP_ICONS = [
   { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me',        col: 0, row: 0 },
   { id: 'probtp',  icon: '🏢',  img: '/winxp_icons/Manage your Server.ico', label: 'Projets PRO BTP', col: 0, row: 1 },
-  { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets perso',   col: 0, row: 2 },
-  { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Mes musiques',    col: 0, row: 3 },
+  { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets',   col: 0, row: 2 },
+  { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Musiques',    col: 0, row: 3 },
   { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV',          col: 0, row: 4 },
   { id: 'github',  icon: '🐙',  img: '/winxp_icons/Earth (fixed).ico', label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn',        col: 1, row: 1 },
   { id: 'recycle', icon: '🗑️',  img: '/winxp_icons/Folder Closed (Alt).ico', label: 'Corbeille',       col: 1, row: 2 },
   { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Démineur', col: 1, row: 3 },
   { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball', col: 1, row: 4 },
+  { id: 'mail', icon: '✉️', img: '/winxp_icons/Phone.ico', label: 'Contact', col: 0, row: 5 },
 ]
 
 // Start menu items
@@ -98,4 +106,5 @@ export const START_MENU_RIGHT = [
   { id: 'github',  icon: '🐙', img: '/winxp_icons/Earth (fixed).ico',  label: 'GitHub' },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn' },
   { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball' },
+  { id: 'mail', icon: '✉️', img: '/winxp_icons/Phone.ico', label: 'Contact' },
 ]

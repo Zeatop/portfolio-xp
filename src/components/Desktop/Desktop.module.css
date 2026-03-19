@@ -32,13 +32,9 @@
   width: 72px;
 }
 
-.icon:hover {
-  background: rgba(49, 106, 197, 0.3);
-}
-
 .selected {
-  background: rgba(49, 106, 197, 0.5) !important;
-  outline: 1px dotted rgba(255, 255, 255, 0.8);
+  background: transparent !important;
+  outline: none !important;
 }
 
 .iconImg {
@@ -48,6 +44,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.selected .iconImg {
+  opacity: 0.6;
+}
+
+.selected .iconLabel {
+  background: rgb(11, 97, 255);
+  color: #fff;
+  outline: 1px dotted rgb(11, 97, 255);
+  padding: 0 2px;
 }
 
 .iconLabel {

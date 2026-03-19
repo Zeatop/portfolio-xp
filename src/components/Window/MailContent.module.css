@@ -1,0 +1,174 @@
+.mail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "winxp-tahoma", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  background: #fff;
+}
+
+/* ── TOOLBAR ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  background: #ece9d8;
+  border-bottom: 1px solid #aca899;
+  flex-shrink: 0;
+}
+
+.toolBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 3px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  color: #000;
+  min-width: 48px;
+}
+
+.toolBtn:hover {
+  background: #dff0ff;
+  border-color: #316ac5;
+}
+
+.toolBtn:active {
+  background: #c1d8f0;
+  border-color: #316ac5;
+}
+
+.toolIcon {
+  font-size: 18px;
+  width: 22px;
+}
+
+.toolSep {
+  width: 1px;
+  height: 32px;
+  background: #aca899;
+  margin: 0 4px;
+}
+
+/* ── INFO BAR ── */
+.infoBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #fffbcc;
+  border-bottom: 1px solid #e0c050;
+  font-size: 11px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.infoIcon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ── FIELDS ── */
+.fields {
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 1px 4px;
+}
+
+.fieldBtn {
+  min-width: 52px;
+  height: 20px;
+  background: #ece9d8;
+  border: 1px solid #aca899;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.fieldBtn:hover {
+  background: #dff0ff;
+  border-color: #316ac5;
+}
+
+.fieldLabel {
+  min-width: 52px;
+  margin-right: 6px;
+  font-size: 11px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 2px;
+}
+
+.fieldValue {
+  flex: 1;
+  font-size: 11px;
+  color: #000;
+  padding: 1px 2px;
+}
+
+.subjectInput {
+  flex: 1;
+  height: 20px;
+  border: 1px solid #7f9db9;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 0 3px;
+  outline: none;
+  background: #fff;
+}
+
+.subjectInput:focus {
+  border-color: #316ac5;
+}
+
+.divider {
+  height: 1px;
+  background: #aca899;
+  margin: 0;
+}
+
+/* ── BODY ── */
+.body {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  padding: 8px;
+  color: #000;
+  background: #fff;
+  line-height: 1.5;
+}
+
+.errorBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #ffe0e0;
+  border-bottom: 1px solid #cc0000;
+  font-size: 11px;
+  color: #cc0000;
+  flex-shrink: 0;
+}
+
+.inputError {
+  border-color: #cc0000 !important;
+  background: #fff8f8;
+}
