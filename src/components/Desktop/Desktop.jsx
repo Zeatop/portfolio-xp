@@ -27,7 +27,8 @@ export default function Desktop() {
   const toggleMinimize = useOsStore((s) => s.toggleMinimize)
   const focusWindow    = useOsStore((s) => s.focusWindow)
   const zTop           = useOsStore((s) => s.zTop)
-  const [selectedIcon, setSelectedIcon] = useState(null)
+  const [selectedIcon,   setSelectedIcon]   = useState(null)
+  const [webampFocused,  setWebampFocused]  = useState(false)
   const [startOpen,    setStartOpen]    = useState(false)
   const [clock,        setClock]        = useState('')
   const webampRef = useRef(null)
@@ -137,7 +138,7 @@ export default function Desktop() {
   // 'musique' est dans le store mais pas rendu comme XpWindow
   const openWindows = Object.keys(windows).filter((id) => id !== 'musique')
 
-  const focusedId = Object.entries(windows).reduce((top, [id, w]) => {
+  const focusedId = webampFocused ? null : Object.entries(windows).reduce((top, [id, w]) => {
     if (w.minimized) return top
     if (!top || w.zIndex > windows[top].zIndex) return id
     return top

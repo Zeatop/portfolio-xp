@@ -46,7 +46,7 @@ export default function XpWindow({ id }) {
       {...(id === 'minesweeper' && dynSize ? { size: dynSize } : {})}
       minWidth={id === 'minesweeper' ? undefined : 260}
       minHeight={id === 'minesweeper' ? undefined : 160}
-      disableResizing={id === 'minesweeper'}
+      enableResizing={id === 'minesweeper' ? false : undefined}
       bounds="parent"
       style={{
         zIndex: win.zIndex,

@@ -1,90 +1,368 @@
-.bios {
+@font-face {
+  font-family: 'winxp-tahoma';
+  src: url('/fonts/Windows Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.desktop {
   width: 100%;
   height: 100%;
-  background: #000;
-  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   overflow: hidden;
+  background-image: url('./blissxp.webp');
+  background-size: cover;
+  cursor: default;
+  font-family: "winxp-tahoma", "MS Shell Dlg 2", Tahoma, Arial, sans-serif;
+}
+
+/* ── ICONS ── */
+.icon {
+  position: absolute;
   display: flex;
   flex-direction: column;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.line {
-  display: block;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 13px;
-  line-height: 1.65;
-  color: #cccccc;
-  white-space: pre;
-}
-
-.white  { color: #ffffff; font-weight: bold; }
-.green  { color: #00cc00; }
-.cyan   { color: #00cccc; }
-.hint   { color: #888888; font-size: 11px; margin-top: 16px; }
-
-/* ── BOOT MENU ── */
-.menu {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.menuOptions {
-  margin-top: 8px;
-  margin-left: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.menuItem {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 13px;
-  line-height: 1.8;
-  color: #cccccc;
-  padding: 0 8px;
+  align-items: center;
+  gap: 3px;
   cursor: pointer;
-  display: inline-block;
-  width: fit-content;
+  padding: 4px;
+  border-radius: 3px;
+  z-index: 10;
+  width: 72px;
 }
 
-.menuItemActive {
-  background: #cccccc;
-  color: #000000;
+.selected {
+  background: transparent !important;
+  outline: none !important;
 }
 
-/* ── ASCII ART ── */
-.ascii {
-  margin-top: auto;
-  padding-bottom: 8px;
+.iconImg {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
-.asciiLine {
-  font-family: 'Courier New', Courier, monospace;
+.selected .iconImg {
+  opacity: 0.6;
+}
+
+.selected .iconLabel {
+  background: rgb(11, 97, 255);
+  color: #fff;
+  outline: 1px dotted rgb(11, 97, 255);
+  padding: 0 2px;
+}
+
+.iconLabel {
+  color: #fff;
+  font-size: 14px;
+  font-family: "winxp-tahoma";
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  text-shadow: 1px 1px 2px #000, 0 0 6px #000;
+}
+
+/* ── TASKBAR ── */
+.taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(180deg, #245edc 0%, #3a6ee0 3%, #1848c8 8%, #1040b0 50%, #0c38a8 51%, #1848c8 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 0;
+  gap: 5px;
+  z-index: 500;
+  border-top: 1px solid #6090e0;
+}
+
+.startBtn {
+  height: 100%;
+  padding: 0 16px 0 10px;
+  /* Pilule collée à gauche — bord gauche plat, bord droit arrondi */
+  border-radius: 0 19px 19px 0;
+  border: 1px solid #1a5a1a;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  color: #fff;
+  font-family: "winxp-tahoma";
+  font-size: 17px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  /* Relief bombé — dégradé vert XP */
+  background: linear-gradient(180deg,
+    #80c840 0%,
+    #58a828 18%,
+    #3a8818 50%,
+    #2e7810 51%,
+    #3a9020 70%,
+    #50a830 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.45),
+    inset 0 -1px 0 rgba(0,0,0,0.25),
+    1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Highlight blanc bombé en haut */
+.startBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.30) 0%,
+    rgba(255,255,255,0.08) 100%
+  );
+  border-radius: 0 18px 0 0;
+  pointer-events: none;
+}
+
+.startBtn:hover {
+  background: linear-gradient(180deg,
+    #90d848 0%,
+    #68b830 18%,
+    #4a9828 50%,
+    #3e8818 51%,
+    #4aa030 70%,
+    #60b840 100%
+  );
+}
+
+.startActive {
+  background: linear-gradient(180deg,
+    #2e7010 0%,
+    #3a8818 50%,
+    #2a6810 51%,
+    #3a8020 100%
+  ) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,0.35),
+    1px 1px 3px rgba(0,0,0,0.5) !important;
+}
+
+.flag {
+  width: 22px;
+  height: 22px;
+}
+
+.flag span {
+  border-radius: 1px;
+}
+
+.tbTasks {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.tbTask {
+  height: 34px;
+  padding: 0 10px;
+  min-width: 108px;
+  max-width: 180px;
+  background: linear-gradient(180deg, #2a5ab8, #1848a8 50%, #2050b0);
+  border: 1px solid #1040a0;
+  border-radius: 3px;
+  color: #fff;
+  font-family: "winxp-tahoma";
   font-size: 13px;
-  line-height: 1.3;
-  white-space: pre;
-  transition: color 0.08s linear;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* ── BOOT LOG post-choix ── */
-.bootLog {
-  margin-top: 12px;
-  animation: fadeIn 0.2s ease;
+.tbTask:hover {
+  background: linear-gradient(180deg, #4070d0, #2858b8 50%, #3060c0);
+}
+
+.tbActive {
+  background: linear-gradient(180deg, #1838a0, #2050b8 50%, #1840a8) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.tbLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tray {
+  margin-left: auto;
+  height: 100%;
+  background: linear-gradient(180deg, #1a4ab0, #1040a8 50%, #1848b0);
+  border-left: 1px solid #3060c0;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.trayIcon {
+  font-size: 19px;
+}
+
+.clock {
+  color: #fff;
+  font-family: "winxp-tahoma";
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.3;
+  min-width: 44px;
+  white-space: pre;
+}
+
+/* ── START MENU ── */
+.startMenu {
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  width: 340px;
+  background: #ece9d8;
+  border: 1px solid #003090;
+  border-radius: 6px 6px 0 0;
+  z-index: 600;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: smSlide 0.12s ease;
+}
+
+@keyframes smSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.smHeader {
+  height: 54px;
+  background: linear-gradient(90deg, #1a4adc, #3a6ae0);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+}
+
+.smAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.smName {
+  color: #fff;
+  font-family: "winxp-tahoma", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.smBody {
+  display: flex;
+  height: 220px;
+}
+
+.smLeft {
+  flex: 1;
+  background: #fff;
+  padding: 4px 0;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.smRight {
+  flex: 1;
+  background: #ece9d8;
+  padding: 4px 0;
+  overflow-y: auto;
+}
+
+.smItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: "winxp-tahoma";
+  font-size: 12px;
+  color: #000;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.smItem:hover {
+  background: #316ac5;
+  color: #fff;
+}
+
+.smItemIcon {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.smSep {
+  height: 1px;
+  background: #ccc;
+  margin: 4px 8px;
+}
+
+.smFooter {
+  height: 34px;
+  background: linear-gradient(90deg, #1a4adc, #3a6ae0);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.smFootBtn {
+  color: #fff;
+  font-family: "winxp-tahoma";
+  font-size: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.smFootBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tbIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
