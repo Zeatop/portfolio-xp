@@ -7,13 +7,6 @@ export const WINDOWS = {
     img: "/winxp_icons/User 1.ico",
     defaultSize: { width: 420, height: 300 },
   },
-  probtp: {
-    id: 'probtp',
-    title: 'Projets PRO BTP',
-    icon: '🏢',
-    img: "/winxp_icons/Manage your Server.ico",
-    defaultSize: { width: 460, height: 380 },
-  },
   perso: {
     id: 'perso',
     title: 'Projets personnels',
@@ -75,21 +68,19 @@ export const WINDOWS = {
 // Desktop icon layout
 export const DESKTOP_ICONS = [
   { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me',        col: 0, row: 0 },
-  { id: 'probtp',  icon: '🏢',  img: '/winxp_icons/Manage your Server.ico', label: 'Projets PRO BTP', col: 0, row: 1 },
   { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets',   col: 0, row: 2 },
   { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Musiques',    col: 0, row: 3 },
-  { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV',          col: 0, row: 4 },
+  { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV',          col: 0, row: 1 },
   { id: 'github',  icon: '🐙',  img: '/winxp_icons/Earth (fixed).ico', label: 'GitHub',          col: 1, row: 0 },
   { id: 'linkedin',icon: '💼',  img: '/winxp_icons/User Accounts.ico', label: 'LinkedIn',        col: 1, row: 1 },
   { id: 'minesweeper', icon: '💣', img: '/winxp_icons/Minesweeper.ico', label: 'Démineur', col: 1, row: 3 },
-  { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball', col: 1, row: 4 },
+  { id: 'pinball', icon: '🕹️', img: '/winxp_icons/3d_space_cadet.png', label: 'Pinball', col: 0, row: 4 },
   { id: 'mail', icon: '✉️', img: '/winxp_icons/Phone.ico', label: 'Contact', col: 1, row: 2 },
 ]
 
 // Start menu items
 export const START_MENU_LEFT = [
   { id: 'about',   icon: '🧑‍💻', img: '/winxp_icons/User 1.ico', label: 'About me' },
-  { id: 'probtp',  icon: '🏢',  img: '/winxp_icons/Manage your Server.ico', label: 'Projets PRO BTP' },
   { id: 'perso',   icon: '🎮',  img: '/winxp_icons/Game Controller.ico', label: 'Projets perso' },
   { id: 'musique', icon: '🎵',  img: '/winxp_icons/Winamp.png', label: 'Mes musiques' },
   { id: 'cv',      icon: '📄',  img: '/winxp_icons/File.ico', label: 'Mon CV' },

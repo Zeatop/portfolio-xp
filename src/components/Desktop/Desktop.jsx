@@ -127,13 +127,23 @@ export default function Desktop() {
   }
 
   function handleOpen(id) {
-    if (id === 'musique') {
-      openMusique()
-    } else {
-      openWindow(id)
-    }
-    setStartOpen(false)
+  if (id === 'github') {
+    window.open('https://github.com/Zeatop', '_blank', 'noopener,noreferrer');
+    setStartOpen(false);
+    return;
   }
+  if (id === 'linkedin') {
+    window.open('https://www.linkedin.com/in/l%C3%A9o-jackson/', '_blank', 'noopener,noreferrer');
+    setStartOpen(false);
+    return;
+  }
+  if (id === 'musique') {
+    openMusique();
+  } else {
+    openWindow(id);
+  }
+  setStartOpen(false);
+}
 
   // 'musique' est dans le store mais pas rendu comme XpWindow
   const openWindows = Object.keys(windows).filter((id) => id !== 'musique')

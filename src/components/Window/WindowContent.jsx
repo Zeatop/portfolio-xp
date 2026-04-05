@@ -6,7 +6,6 @@ import MailContent from './MailContent'
 export default function WindowContent({ id }) {
   switch (id) {
     case 'about':   return <AboutContent />
-    case 'probtp':  return <ProBtpContent />
     case 'perso':   return <PersoContent />
     case 'cv':      return <CvContent />
     case 'github':  return <GithubContent />
@@ -61,25 +60,25 @@ function AboutContent() {
   )
 }
 
-function ProBtpContent() {
-  return (
-    <>
-      <SectionTitle>Alternance — PRO BTP · Équipe DevOps</SectionTitle>
-      <Project title="⏱ Chronos">
-        Outil d'analyse d'obsolescence applicative répondant aux exigences réglementaires DORA.
-        Stack : Java / Spring Boot, Docker Swarm, Traefik.
-      </Project>
-      <Project title="📊 Monitoring Jahia CMS">
-        Mise en place de dashboards de supervision pour le CMS Jahia.
-        Stack : Grafana, InfluxDB, Telegraf.
-      </Project>
-      <Project title="🛠 PFD Toolbox">
-        Outil de configuration automatisée des environnements de développement.
-        Stack : Ansible, Docker Swarm, Traefik.
-      </Project>
-    </>
-  )
-}
+// function ProBtpContent() {
+//   return (
+//     <>
+//       <SectionTitle>Alternance — PRO BTP · Équipe DevOps</SectionTitle>
+//       <Project title="⏱ Chronos">
+//         Outil d'analyse d'obsolescence applicative répondant aux exigences réglementaires DORA.
+//         Stack : Java / Spring Boot, Docker Swarm, Traefik.
+//       </Project>
+//       <Project title="📊 Monitoring Jahia CMS">
+//         Mise en place de dashboards de supervision pour le CMS Jahia.
+//         Stack : Grafana, InfluxDB, Telegraf.
+//       </Project>
+//       <Project title="🛠 PFD Toolbox">
+//         Outil de configuration automatisée des environnements de développement.
+//         Stack : Ansible, Docker Swarm, Traefik.
+//       </Project>
+//     </>
+//   )
+// }
 
 function PersoContent() {
   return (
@@ -264,23 +263,17 @@ function CvContent() {
 }
 
 function GithubContent() {
-  return (
-    <>
-      <SectionTitle>GitHub</SectionTitle>
-      <p className={styles.para}>Retrouvez mes projets open source et contributions.</p>
-      <p><a className={styles.link} href="https://github.com" target="_blank" rel="noreferrer">🔗 github.com/léo</a></p>
-    </>
-  )
+  useEffect(() => {
+    window.open('https://github.com/Zeatop', '_blank', 'noopener,noreferrer');
+  }, []);
+  return null;
 }
 
 function LinkedinContent() {
-  return (
-    <>
-      <SectionTitle>LinkedIn</SectionTitle>
-      <p className={styles.para}>Mon profil professionnel — expériences et formations.</p>
-      <p><a className={styles.link} href="https://linkedin.com" target="_blank" rel="noreferrer">🔗 linkedin.com/in/léo</a></p>
-    </>
-  )
+  useEffect(() => {
+    window.open('https://www.linkedin.com/in/l%C3%A9o-jackson/', '_blank', 'noopener,noreferrer');
+  }, []);
+  return null;
 }
 
 function RecycleContent() {
