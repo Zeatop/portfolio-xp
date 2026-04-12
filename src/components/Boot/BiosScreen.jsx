@@ -150,7 +150,7 @@ export default function BiosScreen() {
     const totalLog = delay + 600
     const endTimer = setTimeout(() => {
       if (action === 'safe') {
-        window.location.href = 'http://localhost:5174'
+        window.location.href = import.meta.env.VITE_SAFEMODE_URL
       } else {
         setPhase('splash')
       }
