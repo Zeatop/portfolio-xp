@@ -35,7 +35,7 @@ pipeline {
 
         stage('Docker Build with Backend URL') {
             steps {
-                sh "docker build --build-arg VITE_SAFEMODE_URL=http://192.168.1.159:30080 -t ${REGISTRY}/${IMAGE}:${TAG} -t ${REGISTRY}/${IMAGE}:latest ."
+                sh "docker build --build-arg VITE_SAFEMODE_URL=https://leo-jackson.com/safemode -t ${REGISTRY}/${IMAGE}:${TAG} -t ${REGISTRY}/${IMAGE}:latest ."
             }
         }
 
@@ -57,7 +57,7 @@ pipeline {
 
     post {
         success {
-            echo "Déploiement réussi ! Portfolio XP accessible sur le port 30090"
+            echo "Déploiement réussi ! Portfolio XP accessible sur le port 30081"
         }
         failure {
             echo "Le pipeline a échoué"
