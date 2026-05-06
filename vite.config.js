@@ -5,6 +5,12 @@ import fs from 'fs'
 
 export default defineConfig({
   base: '/',
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
+
   plugins: [
     react(),
     {

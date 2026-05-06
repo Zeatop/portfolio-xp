@@ -83,18 +83,42 @@ function AboutContent() {
 function PersoContent() {
   return (
     <>
-      <SectionTitle>Développement & création</SectionTitle>
-      <Project title="🎮 Tic-Tac-Toe multijoueur (Godot)">
-        Variante "shifting" avec synchronisation d'état via API HTTP. Architecture modulaire
-        avec GameConfig autoload, Board.gd, OnlineManager.gd.
+      <SectionTitle>Mes réalisations</SectionTitle>
+      <Project title="Judge">
+        Assistant RAG de règles de jeux de société avec un focus sur <em>Magic: The Gathering</em> —
+        ingère des PDFs, indexe via ChromaDB et répond en langage naturel avec sources citées.
+        <div className={styles.tags} style={{ marginTop: 8 }}>
+          <Tag>Python</Tag><Tag>LangChain</Tag><Tag>ChromaDB</Tag><Tag>Mistral</Tag>
+          <Tag>Ollama</Tag><Tag>React</Tag><Tag>TypeScript</Tag><Tag>FastAPI</Tag>
+          <Tag>MongoDB</Tag>
+        </div>
       </Project>
-      <Project title="📖 QuestlyTales">
+
+      <Project title="Portfolio Windows XP">
+        Bureau interactif thématisé Windows XP — fenêtres draggables, Minesweeper, Webamp,
+        écran BIOS animé et client mail Outlook Express.
+        <div className={styles.tags} style={{ marginTop: 8 }}>
+          <Tag>React</Tag><Tag>TypeScript</Tag><Tag>Vite</Tag><Tag>Zustand</Tag>
+          <Tag>SCSS</Tag><Tag>react-rnd</Tag>
+        </div>
+      </Project>
+
+      <Project title="QuestlyTales">
         Application Spring Boot de type choose-your-own-adventure. Système d'actions
         dynamiques basé sur JPA, MapStruct et attributs d'entités.
+        <div className={styles.tags} style={{ marginTop: 8 }}>
+          <Tag>Spring Boot</Tag><Tag>Java</Tag><Tag>React</Tag><Tag>TypeScript</Tag>
+          <Tag>MongoDB</Tag><Tag>REST API</Tag>
+        </div>
       </Project>
-      <Project title="📊 GitLab Analytics Dashboard">
-        Dashboard Python / InfluxDB / Grafana avec requêtes Flux pour statistiques
-        de projets GitLab (activité, langages, inactivité).
+
+      <Project title="Software Toolbox">
+        Wizard d'installation modulaire piloté par des manifestes YAML distants — gestion
+        des versions, variables d'environnement, certificats et licences.
+        <div className={styles.tags} style={{ marginTop: 8 }}>
+          <Tag>Python</Tag><Tag>YAML</Tag><Tag>Git</Tag><Tag>Docker</Tag>
+          <Tag>Windows</Tag><Tag>DevOps</Tag>
+        </div>
       </Project>
     </>
   )
