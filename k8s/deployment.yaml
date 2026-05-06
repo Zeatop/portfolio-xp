@@ -9,26 +9,66 @@ spec:
   selector:
     matchLabels:
       app: portfolio-xp
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  minReadySeconds: 5
   template:
     metadata:
       labels:
         app: portfolio-xp
     spec:
+      terminationGracePeriodSeconds: 15
       containers:
         - name: portfolio-xp
           image: 10.0.0.10:5000/portfolio-xp:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 2
+            periodSeconds: 3
+            timeoutSeconds: 2
+            failureThreshold: 2
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/sh
+                  - -c
+                  - "sleep 5 && nginx -s quit"
+          resources:
+            requests:
+              cpu: 20m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: portfolio-xp
+  labels:
+    app: portfolio-xp
 spec:
   type: NodePort
   selector:
     app: portfolio-xp
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: http
       nodePort: 30081
+      name: http
